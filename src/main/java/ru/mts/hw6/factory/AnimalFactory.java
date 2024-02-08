@@ -1,8 +1,8 @@
-package ru.mts.HW6.factory;
+package ru.mts.hw6.factory;
 
-import ru.mts.HW6.entity.*;
-import ru.mts.HW6.entity.AbstractAnimal;
-import ru.mts.HW6.entity.Cat;
+import ru.mts.hw6.entity.*;
+import ru.mts.hw6.entity.AbstractAnimal;
+import ru.mts.hw6.entity.Cat;
 
 import java.time.LocalDate;
 import java.util.concurrent.ThreadLocalRandom;

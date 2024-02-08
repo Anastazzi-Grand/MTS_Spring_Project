@@ -1,8 +1,8 @@
-package ru.mts.HW6.repository;
+package ru.mts.hw6.repository;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import ru.mts.HW6.entity.Animal;
-import ru.mts.HW6.service.CreateAnimalService;
+import ru.mts.hw6.entity.Animal;
+import ru.mts.hw6.service.CreateAnimalService;
 
 import javax.annotation.PostConstruct;
 import java.time.LocalDate;

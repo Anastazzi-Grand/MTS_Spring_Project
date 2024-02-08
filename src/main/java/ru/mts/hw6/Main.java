@@ -1,13 +1,11 @@
-package ru.mts.HW6;
+package ru.mts.hw6;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import ru.mts.HW6.config.Config;
-import ru.mts.HW6.entity.Animal;
-import ru.mts.HW6.repository.AnimalsRepository;
-import ru.mts.HW6.repository.AnimalsRepositoryImpl;
-import ru.mts.HW6.service.CreateAnimalService;
-import ru.mts.HW6.service.CreateAnimalServiceImpl;
+import ru.mts.hw6.config.Config;
+import ru.mts.hw6.entity.Animal;
+import ru.mts.hw6.repository.AnimalsRepository;
+import ru.mts.hw6.service.CreateAnimalService;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,8 +1,7 @@
-package ru.mts.HW6.repository;
+package ru.mts.hw6.repository;
 
-import ru.mts.HW6.entity.Animal;
+import ru.mts.hw6.entity.Animal;
 
-import java.util.List;
 import java.util.Set;
 
 public interface AnimalsRepository {

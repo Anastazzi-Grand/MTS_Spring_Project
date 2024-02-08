@@ -1,4 +1,4 @@
-package ru.mts.HW6.entity;
+package ru.mts.hw6.entity;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

@@ -1,8 +1,8 @@
-package ru.mts.HW6.processor;
+package ru.mts.hw6.processor;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
-import ru.mts.HW6.service.CreateAnimalService;
+import ru.mts.hw6.service.CreateAnimalService;
 
 public class CreateAnimalBeanPostProcessor implements BeanPostProcessor {
     @Override

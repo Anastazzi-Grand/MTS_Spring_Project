@@ -1,11 +1,11 @@
-package ru.mts.HW6.service;
+package ru.mts.hw6.service;
 
-import ru.mts.HW6.factory.AnimalFactory;
-import ru.mts.HW6.entity.*;
+import ru.mts.hw6.factory.AnimalFactory;
+import ru.mts.hw6.entity.*;
 
 import java.util.Random;
 
-import static ru.mts.HW6.factory.AnimalType.*;
+import static ru.mts.hw6.factory.AnimalType.*;
 
 /**
  * интерфейс для создания новых животных и метод для создания 10 уникальных животных
