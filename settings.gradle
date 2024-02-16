@@ -1,2 +1,3 @@
 rootProject.name = 'MTS_SpringProject'
+include 'animal-starter'
 

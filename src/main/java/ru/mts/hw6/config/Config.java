@@ -11,7 +11,7 @@ import ru.mts.hw6.service.CreateAnimalService;
 import ru.mts.hw6.service.CreateAnimalServiceImpl;
 
 @Configuration
-@ComponentScan("ru.mts.HW6")
+@ComponentScan("ru.mts.hw6")
 public class Config {
     @Bean
     @Scope("prototype")
