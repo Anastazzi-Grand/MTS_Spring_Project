@@ -1,4 +1,4 @@
-package ru.mts.hw6.entity;
+package ru.mts.hw7.entity;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

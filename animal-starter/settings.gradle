@@ -1,0 +1,4 @@
+rootProject.name = 'animal-starter'
+
+include ':animal-starter'
+

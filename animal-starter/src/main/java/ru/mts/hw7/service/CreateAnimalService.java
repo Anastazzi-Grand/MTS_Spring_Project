@@ -1,15 +1,19 @@
-package ru.mts.hw6.service;
+package ru.mts.hw7.service;
 
-import ru.mts.hw6.factory.AnimalFactory;
-import ru.mts.hw6.entity.*;
+import org.springframework.stereotype.Service;
+import ru.mts.hw7.entity.*;
+import ru.mts.hw7.factory.AnimalFactory;
+import ru.mts.hw7.factory.AnimalNames;
 
 import java.util.Random;
 
-import static ru.mts.hw6.factory.AnimalType.*;
+import static ru.mts.hw7.factory.AnimalType.*;
+
 
 /**
  * интерфейс для создания новых животных и метод для создания 10 уникальных животных
  * */
+
 public interface CreateAnimalService {
     int MAX_COUNT_TYPE_ANIMAL = 4;
 
@@ -31,7 +35,7 @@ public interface CreateAnimalService {
      */
     default AbstractAnimal createAnimal() {
         AbstractAnimal animal = null;
-        AnimalFactory animalFactory = new AnimalFactory();
+        AnimalFactory animalFactory = injectForComponent();
         Random random = new Random();
         int randomNumber = random.nextInt(MAX_COUNT_TYPE_ANIMAL);
         switch (randomNumber) {
@@ -50,6 +54,7 @@ public interface CreateAnimalService {
         }
         return animal;
     }
+    AnimalFactory injectForComponent();
     /**
      * Устанавливает тип животного.
      */

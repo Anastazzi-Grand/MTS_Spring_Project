@@ -1,11 +1,26 @@
-package ru.mts.hw6.factory;
+package ru.mts.hw7.factory;
 
-import ru.mts.hw6.entity.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+import ru.mts.hw7.entity.*;
 
+import javax.annotation.Resource;
 import java.time.LocalDate;
+import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
+@Component
 public class AnimalFactory {
+
+    @Autowired
+    final AnimalNames animalNames;
+
+    public AnimalFactory(AnimalNames animalNames) {
+        this.animalNames = animalNames;
+    }
+
+
     /**
      * Метод паттерна Фабрика, создает животное по его типу
      *
@@ -13,28 +28,26 @@ public class AnimalFactory {
      * @return Объект созданного животного
      */
     public AbstractAnimal createAnimal(AnimalType type) {
-        String[] names = {"Fluffy", "Max", "Bella", "Charlie", "Lucy", "Cooper", "Daisy", "Rocky", "Luna", "Buddy"};
         AbstractAnimal animal = null;
         long minDay = LocalDate.of(1992, 1, 1).toEpochDay();
         long maxDay = LocalDate.of(2022, 12, 31).toEpochDay();
         long randomDay = ThreadLocalRandom.current().nextLong(minDay, maxDay);
         LocalDate birthDate = LocalDate.ofEpochDay(randomDay);
-        String randomName = names[ThreadLocalRandom.current().nextInt(names.length)];
         switch (type) {
             case CAT:
-                animal = new Cat("Siberian", randomName, birthDate);
+                animal = new Cat("Siberian", animalNames.getCatName(), birthDate);
                 break;
             case DOG:
-                animal = new Dog("Labrador", randomName, birthDate);
+                animal = new Dog("Labrador", animalNames.getDogName(), birthDate);
                 break;
             case WOLF:
-                animal = new Wolf("Arctic", randomName, birthDate);
+                animal = new Wolf("Arctic", animalNames.getWolfName(), birthDate);
                 break;
             case SHARK:
-                animal = new Shark("Great White", randomName, birthDate);
+                animal = new Shark("Great White", animalNames.getSharkName(), birthDate);
                 break;
         }
-        System.out.println("Создано животное: " + animal.getName() + " - " + animal.getBreed() + " Birthday: " + animal.getBirthDate());
+        System.out.println("Created animal: " + animal.getName() + " - " + animal.getBreed() + " Birthday: " + animal.getBirthDate());
         return animal;
     }
 }
