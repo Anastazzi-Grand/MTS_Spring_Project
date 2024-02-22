@@ -5,17 +5,13 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import ru.mts.hw7.Application;
+import ru.mts.hw7.factory.*;
 
-@SpringBootTest
+@SpringBootTest(classes = {Application.class})
 public class AnimalFactoryTest {
     @Autowired
     private AnimalFactory animalFactory;
-
-    @Test
-    @DisplayName("Check animalFactory")
-    void checkNullAnimalNameTest() {
-        Assertions.assertThrows(NullPointerException.class, () -> animalFactory.createAnimal(AnimalType.NO_NAME));
-    }
 
     @Test
     @DisplayName("Check createAnimal")

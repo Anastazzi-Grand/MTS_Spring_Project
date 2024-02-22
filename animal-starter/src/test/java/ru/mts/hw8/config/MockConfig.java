@@ -5,12 +5,10 @@ import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
-import ru.mts.hw8.entity.Cat;
-import ru.mts.hw8.entity.Dog;
-import ru.mts.hw8.entity.Shark;
-import ru.mts.hw8.entity.Wolf;
-import ru.mts.hw8.factory.AnimalFactory;
-import ru.mts.hw8.factory.AnimalType;
+import ru.mts.hw7.entity.*;
+import ru.mts.hw7.factory.*;
+import ru.mts.hw7.service.CreateAnimalService;
+import ru.mts.hw7.service.CreateAnimalServiceImpl;
 
 import java.time.LocalDate;
 

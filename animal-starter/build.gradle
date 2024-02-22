@@ -24,7 +24,7 @@ dependencies {
 }
 
 springBoot {
-    mainClass = 'ru.mts.hw8.Application'
+    mainClass = 'ru.mts.hw7.Application'
 }
 
 test {

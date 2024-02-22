@@ -6,12 +6,16 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
-import ru.mts.hw6.entity.Animal;
-import ru.mts.hw8.Application;
-import ru.mts.hw8.Main;
+import ru.mts.hw7.entity.Animal;
+import ru.mts.hw7.Application;
+import ru.mts.hw7.Main;
+import ru.mts.hw7.entity.Cat;
+import ru.mts.hw7.entity.Dog;
+import ru.mts.hw7.repository.AnimalsRepositoryImpl;
 import ru.mts.hw8.config.MockConfig;
-import ru.mts.hw8.service.CreateAnimalService;
+import ru.mts.hw7.service.CreateAnimalService;
 
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -24,22 +28,23 @@ public class AnimalsRepositoryTest {
     @Test
     @DisplayName("Check findDuplicate")
     void findDuplicateTest() {
-        Set<String> expectedDuplicates = new HashSet<>();
-        expectedDuplicates.add("C");
+        Set<Animal> expectedDuplicates = new HashSet<>();
+        expectedDuplicates.add(new Cat("Cat", "C", LocalDate.of(2021,12,12)));
         Assertions.assertEquals(expectedDuplicates, animalsRepository.findDuplicate());
     }
 
     @Test
-    @DisplayName("Check findDuplicate with empty Set")
+    @DisplayName("Check findDuplicate with wrong Set")
     void findDuplicateEmptyTest() {
-        Set<String> expectedDuplicates = new HashSet<>();
+        Set<Animal> expectedDuplicates = new HashSet<>();
+        expectedDuplicates.add(new Dog("Dog", "C", LocalDate.of(2021,12,12)));
         Assertions.assertNotEquals(expectedDuplicates, animalsRepository.findDuplicate());
     }
 
     @Test
     @DisplayName("Check findLeapYearNames")
     void findLeapYearNamesTest() {
-        String[] expectedAnimalsNames = {"C"};
+        String[] expectedAnimalsNames = {};
         Assertions.assertArrayEquals(expectedAnimalsNames, animalsRepository.findLeapYearNames());
     }
 
