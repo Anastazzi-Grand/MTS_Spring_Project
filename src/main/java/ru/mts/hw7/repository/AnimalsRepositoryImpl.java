@@ -29,7 +29,6 @@ public class AnimalsRepositoryImpl implements AnimalsRepository {
     @Override
     public String[] findLeapYearNames() {
         List<String> leapYearNames = new ArrayList<>();
-        int currentYear = Year.now().getValue();
         animals.forEach(animal -> {
             if (animal.getBirthDate().getYear() % 4 == 0) {
                 leapYearNames.add(animal.getName());
@@ -40,6 +39,7 @@ public class AnimalsRepositoryImpl implements AnimalsRepository {
 
     @Override
     public Animal[] findOlderAnimal(int n) {
+        if (n < 0) throw new IllegalArgumentException("N should be > 0");
         LocalDate currentDate = LocalDate.now();
         return animals.stream()
                 .filter(animal -> animal.getBirthDate().until(currentDate).getYears() > n)

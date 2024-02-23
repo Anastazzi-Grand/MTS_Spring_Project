@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 import ru.mts.hw7.entity.*;
 import ru.mts.hw7.factory.AnimalFactory;
 
-
+@Service
 public class CreateAnimalServiceImpl implements CreateAnimalService {
 
     AnimalFactory animalFactory;
@@ -30,6 +30,7 @@ public class CreateAnimalServiceImpl implements CreateAnimalService {
      * @param n количество животных, которые необходимо создать
      */
     public AbstractAnimal[] createTenUniqueAnimals(int n){
+        if (n < 0) throw new IllegalArgumentException("N should be > 0");
         AbstractAnimal[] animals = new AbstractAnimal[n];
         for (int i = 0; i < n; i++){
             animals[i] = createAnimal();
