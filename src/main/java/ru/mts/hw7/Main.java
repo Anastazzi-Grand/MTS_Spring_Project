@@ -11,7 +11,6 @@ import ru.mts.hw7.factory.AnimalNames;
 
 import java.util.Arrays;
 
-@SpringBootApplication
 @EnableConfigurationProperties
 public class Main {
 

@@ -16,8 +16,11 @@ public class AnimalsRepositoryImpl implements AnimalsRepository {
 
     protected List<Animal> animals = new ArrayList<>();;
 
-    @Autowired
-    CreateAnimalService animalService;
+    private final CreateAnimalService animalService;
+
+    public AnimalsRepositoryImpl(CreateAnimalService createAnimalService) {
+        this.animalService = createAnimalService;
+    }
 
     @PostConstruct
     private void postConstruct(){
