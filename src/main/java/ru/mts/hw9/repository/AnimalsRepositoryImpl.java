@@ -85,7 +85,7 @@ public class AnimalsRepositoryImpl implements AnimalsRepository {
             System.out.println("There is no duplicates");
         }
         for (Map.Entry<String, Integer> entry : animalDuplicates.entrySet()) {
-            System.out.println(entry.getKey() + ": " + entry.getValue());
+            System.out.println(entry.getKey() + "=" + entry.getValue());
         }
     }
 }
