@@ -41,7 +41,7 @@ public class AnimalsRepositoryTest {
         List<Animal> listOfAnimals = List.of(
                 new Cat("Cat", "C", new BigDecimal(10), "Cute", LocalDate.of(2010, 1, 1))
         );
-        Assertions.assertThrows(EmptyListOfAnimalsException.class, () -> animalsRepository.findMinConstAnimals(animalsList));
+        Assertions.assertThrows(FindMinConstAnimalsException.class, () -> animalsRepository.findMinConstAnimals(animalsList));
         Assertions.assertThrows(FindMinConstAnimalsException.class, () -> animalsRepository.findMinConstAnimals(listOfAnimals));
     }
 

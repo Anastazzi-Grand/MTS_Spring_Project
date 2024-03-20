@@ -1,6 +1,7 @@
 package ru.mts.hw11.repository;
 
 import ru.mts.hw11.entity.Animal;
+import ru.mts.hw11.exception.FindMinConstAnimalsException;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -56,5 +57,5 @@ public interface AnimalsRepository {
      * @param animalLists List животных
      * @return List животных, отсортированный в обратном алфавитном порядке
      */
-    List<Animal> findMinConstAnimals(List<Animal> animalLists);
+    List<Animal> findMinConstAnimals(List<Animal> animalLists) throws FindMinConstAnimalsException;
 }

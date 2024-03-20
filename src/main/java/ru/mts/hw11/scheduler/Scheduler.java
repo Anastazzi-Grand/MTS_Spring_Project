@@ -5,6 +5,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import ru.mts.hw11.entity.Animal;
 import ru.mts.hw11.exception.EmptyListOfAnimalsException;
+import ru.mts.hw11.exception.FindMinConstAnimalsException;
 import ru.mts.hw11.exception.FindOlderAnimalException;
 import ru.mts.hw11.repository.AnimalsRepositoryImpl;
 
@@ -34,7 +35,7 @@ public class Scheduler {
         List<Animal> animals = null;
         try {
             System.out.println(animalsRepository.findMinConstAnimals(animals));
-        } catch (EmptyListOfAnimalsException e) {
+        } catch (FindMinConstAnimalsException e) {
             System.out.println(e);
         }
 

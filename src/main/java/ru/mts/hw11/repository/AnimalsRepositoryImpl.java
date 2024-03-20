@@ -123,9 +123,9 @@ public class AnimalsRepositoryImpl implements AnimalsRepository {
     }
 
     @Override
-    public List<Animal> findMinConstAnimals(List<Animal> animalLists) {
-        if (animalLists == null || animalLists.isEmpty()) {
-            throw new EmptyListOfAnimalsException("List of animals is null or empty!");
+    public List<Animal> findMinConstAnimals(List<Animal> animalLists) throws FindMinConstAnimalsException {
+        if (animalLists == null) {
+            throw new FindMinConstAnimalsException("List of animals is null or empty!");
         } else if (animalLists.size() < 3) {
             throw new FindMinConstAnimalsException("Size of list of animals should be >= 3");
         }
