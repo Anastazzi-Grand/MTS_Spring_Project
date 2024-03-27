@@ -60,5 +60,5 @@ public interface AnimalsRepository {
      * @param animalLists List животных
      * @return List животных, отсортированный в обратном алфавитном порядке
      */
-    List<Animal> findMinConstAnimals(CopyOnWriteArrayList<Animal> animalLists) throws FindMinConstAnimalsException;
+    CopyOnWriteArrayList<Animal> findMinConstAnimals(CopyOnWriteArrayList<Animal> animalLists) throws FindMinConstAnimalsException;
 }
